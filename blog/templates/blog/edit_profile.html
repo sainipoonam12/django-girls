@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+edit djengo Girls
+{% endblock %}
+
+{% block content %}
+<h2>update Django Girls</h2>
+<form method="post" enctype='multipart/form-data'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	{% if request.user.profile_img %}<img src="{{ request.user.profile_img.url }}">{% endif %}
+	<button type="submit">update</button>
+
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+li a {
+	color: green;
+}
+
+body {
+
+   
+	background: rgb(255, 255, 255) url("images/backgroundimage.jpg") no-repeat; */
+	background-color: #cccccc;
+	height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+	position: relative;
+	background-size: cover;
+}

@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<html>
+{% block title %}
+display
+{% endblock %}
+
+{% block content %}
+<form>
+	{% csrf_token %}
+	<h1>{{request.user}} 's profile</h1>
+	<h2>Username: {{request.user}}</h2>
+	<h2>email: {{request.user.email}}</h2>
+	<h2>Mobile No.: {{request.user.mobile_number}}</h2>
+	<h2>Profile Image:{% if request.user.profile_img %}<img src="{{ request.user.profile_img.url }}" width="250"
+			height="250"></img>{% else %}no image selected{% endif %}
+		<br />
+		<br>
+		<br>
+
+		<b>Edit your profile</b>
+		{% csrf_token %}
+		<a href="{% url 'blog:edit_profile' %}">EDIT HERE</a>
+</form>
+{% endblock %}
+<br />
+
+
+</html>

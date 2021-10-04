@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% for tag in posts %}
+<h2><a href="{% url 'blog:post_list'  %}"style="color: black">{{ tag.title}}</a></h2>
+<p>{{ tag.text|linebreaksbr }}</p>
+{% endfor %}
+{% endblock %} 

@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% for tag in tags %}
+<h2><a href="{% url 'blog:tag_details' slug=tag.slug%}" style="color: black">{{tag.name}}</a></h2>
+{% endfor %}
+{% endblock %}

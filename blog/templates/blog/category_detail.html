@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% for cat in cats %}
+<h2><a href="{% url 'blog:post_list'  %}" style="color: black">{{ cat.title}}</a></h2>
+<p>{{ cat.text|linebreaksbr }}</p>
+</article>
+{% endfor %}
+{% endblock %}

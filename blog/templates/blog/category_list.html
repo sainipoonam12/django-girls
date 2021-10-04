@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+	{% for cat in category %}
+		<h2><a href="{% url 'blog:category_detail' slug=cat.slug%}"style="color: black">{{cat.name}}</a></h2>
+	{% endfor %}
+{% endblock %} 
+			   
